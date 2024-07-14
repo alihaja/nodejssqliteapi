@@ -40,11 +40,16 @@ app.post("/", (req, res) => {
 
 //get request
 app.get("/", (req, res) => {
-    sql = "SELECT * FROM tbcomment";
+    sql = "SELECT * FROM tbcomment LIMIT 1";
     try{
-        
+        db.all(sql, [], (err, rows) => {
+            if(err) return res.json({status:300, success: false, error: err});
+
+            if(rows.length < 1) 
+                return res.json({status:300, success: false, error: "no data"});
           
-            return res.json({ status:200, succcess: true });
+            return res.json({ status:200, data: rows, succcess: true });
+        });
   
     }
     catch(error){
