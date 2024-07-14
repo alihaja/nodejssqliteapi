@@ -45,7 +45,7 @@ app.get("/", (req, res) => {
         
           
             return res.json({ status:200, succcess: true });
-        });
+  
     }
     catch(error){
         return res.json({
