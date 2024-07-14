@@ -39,7 +39,7 @@ app.post("/", (req, res) => {
 });
 
 //get request
-app.get("/", (req, res) => {
+app.get("/comment", (req, res) => {
     sql = "SELECT * FROM tbcomment";
     try{
         db.all(sql, [], (err, rows) => {
