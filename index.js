@@ -7,7 +7,7 @@ const url = require("url");
 let sql;
 
 //connect db 
-const db = new sqlite3.Database('https://github.com/alihaja/nodejssqliteapi/blob/master/comment.db', sqlite3.OPEN_READWRITE, (err)=>{
+const db = new sqlite3.Database('./comment.db', sqlite3.OPEN_READWRITE, (err)=>{
     if(err) return console.error(err.message);
 });
 
