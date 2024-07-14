@@ -7,11 +7,7 @@
       }
     ],
     "routes": [
-      {
-        "src": "/{.*}",
-        "dest": "/"
-      
-      },
-   { "src": "/comment", "dest": "/" }
+     
+   { "src": "/comment/{.*}", "dest": "/" }
     ]
   }
