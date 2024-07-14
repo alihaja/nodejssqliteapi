@@ -14,7 +14,7 @@ const db = new sqlite3.Database('https://github.com/alihaja/nodejssqliteapi/blob
 app.use(bodyParser.json());
 
 //postapi
-app.post("/", (req, res) => {
+app.post("/comment", (req, res) => {
     try{
         const { fname, comment } = req.body;
         sql = "INSERT INTO tbcomment(fname, comment) VALUES (?,?)";
