@@ -42,10 +42,6 @@ app.post("/", (req, res) => {
 app.get("/", (req, res) => {
     sql = "SELECT * FROM tbcomment";
     try{
-        const queryObj = url.parse(req.url, true).query; //query param
-        if(queryObj.field && queryObj.type){
-            sql += ` WHERE ${queryObj.field}  LIKE '%${queryObj.type}%'`;
-        }
         db.all(sql, [], (err, rows) => {
             if(err) return res.json({status:300, success: false, error: err});
 
