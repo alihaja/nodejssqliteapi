@@ -14,7 +14,7 @@ const db = new sqlite3.Database('comment.db', sqlite3.OPEN_READWRITE, (err)=>{
 app.use(bodyParser.json());
 
 //postapi
-app.post("/comment", (req, res) => {
+app.post("/", (req, res) => {
     try{
         const { fname, comment } = req.body;
         sql = "INSERT INTO tbcomment(fname, comment) VALUES (?,?)";
@@ -39,7 +39,7 @@ app.post("/comment", (req, res) => {
 });
 
 //get request
-app.get("/comment", (req, res) => {
+app.get("/", (req, res) => {
     sql = "SELECT * FROM tbcomment";
     try{
         const queryObj = url.parse(req.url, true).query; //query param
