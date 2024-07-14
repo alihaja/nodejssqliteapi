@@ -48,7 +48,7 @@ app.get("/", (req, res) => {
             if(rows.length < 1) 
                 return res.json({status:300, success: false, error: "no data"});
           
-            return res.json({ status:200, data: rows, succcess: true });
+            return res.json({ status:200, succcess: true });
         });
     }
     catch(error){
